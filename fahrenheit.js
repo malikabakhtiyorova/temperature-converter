@@ -5,16 +5,17 @@ fahrenheitForm.addEventListener("submit", function (evt) {
   var celcius = parseFloat(fahrenheitForm.querySelector("#celcius").value.trim());
   var formula = (celcius * 9 / 5) + 32;
   var fahrenheit = document.querySelector("#fahrenheit");
-  fahrenheit.value = formula;
+  fahrenheit.value = parseFloat(formula);
 
-  if (formula >= 34) {
-    fahrenheit.classList.remove("bg-primary");
+
+
+  if (formula >= 80) {
+    fahrenheit.classList.remove("bg-primary", "bg-danger");
     fahrenheit.classList.add("bg-danger");
-  } else {
-    fahrenheit.classList.remove("bg-danger");
+  } else if (formula < 80) {
+    fahrenheit.classList.remove("bg-danger", "bg-danger");
     fahrenheit.classList.add("bg-primary");
   }
-
 })
 
 
